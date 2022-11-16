@@ -1,23 +1,15 @@
-# Backend service
+# Frontend service
 
-This is the backend-service of our webshop. This service provides an API for our frontend, rendering JSON-objects, and interacts with our MySQL-database.
-Dit is de backend-service van onze webshop. Deze service voorziet een API voor onze frontend, gebruik makend van JSON om te communiceren, en slaat alle data op in een MySQL-databankt
+This is the service that will connect to the backend and render the received JSON-data to a more visually pleasing format.
 
 ## Provided
+* Een codebase, geschreven in ReactJS, een Javascript-framework. Je bent wellicht niet bekend met deze technologie, een situatie waar een DevOps-engineer dagelijks mee geconfronteerd wordt. Kennis van de code is echter niet vereist.
 
-* Een codebase in Java 11, gemaakt met het SpringBoot Framework
-* Een Dockerfile om onze applicatie in een container te verpakken
-* Enkele Docker environment variabelen om de connectie met onze database te regelen. Je kan deze gebruiken bij het opstarten van de container of in docker-compose files (zoals we in [voorgaande labo's](https://tiebevn.notion.site/Labo-2-Container-orchestration-bf91cc27c7e4433182fb2e96e92f65b4) hebben gedaan)
-    * MYSQL_HOST: de hostname van onze database
-    * MYSQL_USER: de gebruiker waarmee we met onze database verbinden
-    * MYSQL_PASSWORD: het wachtwoord waarme we met onze database verbinden
-    * MYSQL_DATABASE: de database waarmee we verbinden
-    * MYSQL_PORT: de poort waarmee we verbinden
-
-## Todo
-
+## Requirement
 * Creëer je eigen repository, door de files te clonen en zelf te pushen of door een fork te nemen.
+* Een Dockerfile om deze applicatie in een container te verpakken. Hiervoor zal je moeten zoeken hoe je dit best aanpakt. Dit vind je met het nodige Google-werk echter zeker terug. De info in [INSTALL.md](https://github.com/Operating-Systems-2/pe_frontend/blob/c0a147b06de5b16b027682d48fe9ece833bf69a5/INSTALL.md) kan je al opweg helpen.
 * Zet een CI/CD systeem op, zoals gezien in de lessen.
+* Een minimale aanpassing in de code: Er staat een URL waar verwezen wordt naar de Backend-service: deze zal je uiteraard moeten vervangen door een publiek toegankele URL voor je backend vanop je productieserver. De betreffende lijn code vind je [hier](https://github.com/Operating-Systems-2/pe_frontend/blob/c0a147b06de5b16b027682d48fe9ece833bf69a5/src/App.js#L10)
 
-## Acceptance criteria
-* Zorg dat je een werkende container automatisch kan builden met Github Actions
+## Acceptance Criteria
+* Zorg dat je een werkende container automatisch kan builden met Github Actions.
