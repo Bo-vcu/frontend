@@ -1,10 +1,9 @@
-FROM tiangolo/node-frontend:10 as build-stage
-WORKDIR /app
-COPY package*.json /app/
-RUN npm install
-COPY ./ /app/
-RUN CI=true npm test
-RUN npm run build
-FROM nginx:1.15
-COPY --from=build-stage /app/build/ /usr/share/nginx/html
-COPY --from=build-stage /nginx.conf /etc/nginx/conf.d/default.conf
+ FROM node:19-alpine
+ WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+RUN npm install react-scripts@3.4.1 -g --silent
+COPY . ./
+CMD ["npm", "start"]
