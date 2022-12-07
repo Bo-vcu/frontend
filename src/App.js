@@ -26,8 +26,8 @@ class App extends Component{
     handleCreate = () => {
       const { form } = this.formRef.props;
       form.validateFields((err, values) => {
-        if (err) {
-          return;
+        //if (err) {
+         // return;
         }
   
         console.log('Received values of form: ', values);
